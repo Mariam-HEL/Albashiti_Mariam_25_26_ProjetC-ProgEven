@@ -37,6 +37,7 @@
             ClientSize = new Size(800, 450);
             Name = "EcranPrincipale";
             Text = "EcranPrincipale ";
+            FormClosing += EcranPrincipale_FormClosing;
             ResumeLayout(false);
         }
 

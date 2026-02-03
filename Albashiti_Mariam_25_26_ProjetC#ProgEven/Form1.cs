@@ -16,5 +16,19 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             InitializeComponent();
         }
+
+        private void EcranPrincipale_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "Voulez vous vraiment fermner cette fenetre ?",
+              "Confirmation",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
