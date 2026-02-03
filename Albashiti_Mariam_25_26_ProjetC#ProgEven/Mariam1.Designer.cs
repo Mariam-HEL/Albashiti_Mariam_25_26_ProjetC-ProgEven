@@ -31,6 +31,7 @@
             btnName = new Button();
             lblTest = new Label();
             pictureBox1 = new PictureBox();
+            btnName2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -66,12 +67,27 @@
             // 
             pictureBox1.Image = Properties.Resources._9b4fc1daa920440a8c03e8d9ae105bdf;
             pictureBox1.ImageLocation = "";
-            pictureBox1.Location = new Point(254, 127);
+            pictureBox1.Location = new Point(12, 182);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(411, 295);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
+            // 
+            // btnName2
+            // 
+            btnName2.Anchor = AnchorStyles.None;
+            btnName2.AutoSize = true;
+            btnName2.Cursor = Cursors.Hand;
+            btnName2.Font = new Font("Showcard Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnName2.ForeColor = Color.OliveDrab;
+            btnName2.Location = new Point(440, 437);
+            btnName2.Name = "btnName2";
+            btnName2.Size = new Size(200, 40);
+            btnName2.TabIndex = 3;
+            btnName2.Text = "Maryoma";
+            btnName2.UseVisualStyleBackColor = true;
+            btnName2.Click += btnName2_Click;
             // 
             // Mariam1
             // 
@@ -79,6 +95,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(934, 489);
+            Controls.Add(btnName2);
             Controls.Add(pictureBox1);
             Controls.Add(lblTest);
             Controls.Add(btnName);
@@ -96,5 +113,6 @@
         private Button btnName;
         private Label lblTest;
         private PictureBox pictureBox1;
+        private Button btnName2;
     }
 }

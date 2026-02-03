@@ -27,5 +27,14 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             lblTest.Left = (this.ClientSize.Width - lblTest.Width) / 2;
             btnName.Left = (this.ClientSize.Width - btnName.Width) / 2;
         }
+
+        private void btnName2_Click(object sender, EventArgs e)
+        {
+            EcranPrincipale fenetre2 = new EcranPrincipale();
+            fenetre2.Show();
+            //réaliser l'instanciation 
+            //EcranPrincipale maFenetre = new EcranPrincipale();
+            //maFenetre.Show();
+        }
     }
 }
