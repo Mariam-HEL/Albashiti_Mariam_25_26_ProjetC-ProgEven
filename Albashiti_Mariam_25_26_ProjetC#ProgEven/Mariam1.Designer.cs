@@ -39,6 +39,7 @@
             pictureBox4 = new PictureBox();
             btnSwitch = new Button();
             label1 = new Label();
+            btnSeance2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -160,12 +161,23 @@
             label1.TabIndex = 9;
             label1.Text = "Cliquez ici pour afficher un autre form ..";
             // 
+            // btnSeance2
+            // 
+            btnSeance2.Location = new Point(31, 383);
+            btnSeance2.Name = "btnSeance2";
+            btnSeance2.Size = new Size(263, 29);
+            btnSeance2.TabIndex = 10;
+            btnSeance2.Text = "Cliquez ici pour aller au seance 2 !";
+            btnSeance2.UseVisualStyleBackColor = true;
+            btnSeance2.Click += btnSeance2_Click;
+            // 
             // Mariam1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1128, 568);
+            Controls.Add(btnSeance2);
             Controls.Add(label1);
             Controls.Add(btnSwitch);
             Controls.Add(pictureBox4);
@@ -201,5 +213,6 @@
         private PictureBox pictureBox4;
         private Button btnSwitch;
         private Label label1;
+        private Button btnSeance2;
     }
 }

@@ -97,6 +97,10 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
         }
 
-
+        private void btnSeance2_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.ShowDialog();
+        }
     }
 }

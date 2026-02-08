@@ -19,7 +19,38 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            //ou
+            //Application.Exit();
+        }
+        private void NonImplementation()
+        {
+            MessageBox.Show(
+                "Cette fonctionne n'est pas encore implementee",
+                "Information",
+                MessageBoxButtons.OK
+                );
+        }
+
+        private void listeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NonImplementation();
+        }
+
+        private void barreDeProgressionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NonImplementation();
+        }
+
+        private void editeurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NonImplementation();
+        }
+
+        private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           EcranAPropos ff = new EcranAPropos();
+            ff.ShowDialog();
         }
     }
 }

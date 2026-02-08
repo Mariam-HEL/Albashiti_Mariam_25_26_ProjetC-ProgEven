@@ -35,8 +35,8 @@
             toolStripSeparator1 = new ToolStripSeparator();
             quitterToolStripMenuItem = new ToolStripMenuItem();
             applicationsToolStripMenuItem = new ToolStripMenuItem();
-            aideToolStripMenuItem = new ToolStripMenuItem();
             editeurToolStripMenuItem = new ToolStripMenuItem();
+            aideToolStripMenuItem = new ToolStripMenuItem();
             aProposToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -63,12 +63,14 @@
             listeToolStripMenuItem.Name = "listeToolStripMenuItem";
             listeToolStripMenuItem.Size = new Size(230, 26);
             listeToolStripMenuItem.Text = "Liste";
+            listeToolStripMenuItem.Click += listeToolStripMenuItem_Click;
             // 
             // barreDeProgressionToolStripMenuItem
             // 
             barreDeProgressionToolStripMenuItem.Name = "barreDeProgressionToolStripMenuItem";
             barreDeProgressionToolStripMenuItem.Size = new Size(230, 26);
             barreDeProgressionToolStripMenuItem.Text = "Barre de progression";
+            barreDeProgressionToolStripMenuItem.Click += barreDeProgressionToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
@@ -90,6 +92,13 @@
             applicationsToolStripMenuItem.Size = new Size(106, 24);
             applicationsToolStripMenuItem.Text = "Applications";
             // 
+            // editeurToolStripMenuItem
+            // 
+            editeurToolStripMenuItem.Name = "editeurToolStripMenuItem";
+            editeurToolStripMenuItem.Size = new Size(224, 26);
+            editeurToolStripMenuItem.Text = "Editeur";
+            editeurToolStripMenuItem.Click += editeurToolStripMenuItem_Click;
+            // 
             // aideToolStripMenuItem
             // 
             aideToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aProposToolStripMenuItem });
@@ -97,17 +106,12 @@
             aideToolStripMenuItem.Size = new Size(54, 24);
             aideToolStripMenuItem.Text = "Aide";
             // 
-            // editeurToolStripMenuItem
-            // 
-            editeurToolStripMenuItem.Name = "editeurToolStripMenuItem";
-            editeurToolStripMenuItem.Size = new Size(224, 26);
-            editeurToolStripMenuItem.Text = "Editeur";
-            // 
             // aProposToolStripMenuItem
             // 
             aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
             aProposToolStripMenuItem.Size = new Size(224, 26);
             aProposToolStripMenuItem.Text = "A propos";
+            aProposToolStripMenuItem.Click += aProposToolStripMenuItem_Click;
             // 
             // Form3
             // 
