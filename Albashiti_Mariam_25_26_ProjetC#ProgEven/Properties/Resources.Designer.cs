@@ -63,6 +63,16 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _23cdab71a92f974b684233d262795f28 {
+            get {
+                object obj = ResourceManager.GetObject("23cdab71a92f974b684233d262795f28", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9b4fc1daa920440a8c03e8d9ae105bdf {
             get {
                 object obj = ResourceManager.GetObject("9b4fc1daa920440a8c03e8d9ae105bdf", resourceCulture);
@@ -76,6 +86,16 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven.Properties {
         internal static System.Drawing.Bitmap f7b978d82598ad0761804d58b2bf23d2 {
             get {
                 object obj = ResourceManager.GetObject("f7b978d82598ad0761804d58b2bf23d2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap w6ELgf {
+            get {
+                object obj = ResourceManager.GetObject("w6ELgf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

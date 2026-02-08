@@ -121,7 +121,13 @@
   <data name="9b4fc1daa920440a8c03e8d9ae105bdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9b4fc1daa920440a8c03e8d9ae105bdf.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="23cdab71a92f974b684233d262795f28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\23cdab71a92f974b684233d262795f28.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="f7b978d82598ad0761804d58b2bf23d2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f7b978d82598ad0761804d58b2bf23d2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="w6ELgf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\w6ELgf.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

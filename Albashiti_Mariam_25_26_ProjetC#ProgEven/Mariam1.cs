@@ -31,13 +31,13 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             lblTest.AutoSize = true;
             lblTest.Size = new Size(200, 50);
-            lblTest.Location = new Point(50, 30);
-            int largeurGroupe = Math.Max(lblTest.Width, btnName.Width);
+            // lblTest.Location = new Point(50, 30);
+            //int largeurGroupe = Math.Max(lblTest.Width, btnName.Width);
 
-            lblTest.Left = (this.ClientSize.Width - lblTest.Width) / 2;
-            btnName.Left = (this.ClientSize.Width - btnName.Width) / 2;
-            centerPicture(pictureBox1);
-            centerPicture(pictureBox2);
+            //lblTest.Left = (this.ClientSize.Width - lblTest.Width) / 2;
+            // btnName.Left = (this.ClientSize.Width - btnName.Width) / 2;
+            //centerPicture(pictureBox1);
+            //centerPicture(pictureBox2);
         }
 
         private void btnName2_Click(object sender, EventArgs e)
@@ -53,11 +53,11 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             pictureBox1.Visible = !pictureBox1.Visible;
         }
-        private void centerPicture(PictureBox pic)
-        {
-            pic.Top = (this.ClientSize.Height - pic.Height) / 2;
-            pic.Left = (this.ClientSize.Width - pic.Width) / 2;
-        }
+        //private void centerPicture(PictureBox pic)
+        //{
+        //    pic.Top = (this.ClientSize.Height - pic.Height) / 2;
+        //    pic.Left = (this.ClientSize.Width - pic.Width) / 2;
+        //}
 
         private void Mariam1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -72,5 +72,31 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                 e.Cancel = true;
             }
         }
+        bool isImage = true;
+        private void btnSwitch_Click(object sender, EventArgs e)
+        {
+            if (isImage)
+            {
+                pictureBox3.Image = Properties.Resources.w6ELgf;
+                pictureBox4.Image = Properties.Resources._23cdab71a92f974b684233d262795f28;
+
+            }
+            else
+            {
+                pictureBox3.Image = Properties.Resources._23cdab71a92f974b684233d262795f28;
+                pictureBox4.Image = Properties.Resources.w6ELgf;
+            }
+            isImage = !isImage;
+            //Image temp = pictureBox3.Image;
+            //pictureBox3.Image = pictureBox4.Image;
+            //pictureBox4.Image = temp;
+        }
+
+        private void lblTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
