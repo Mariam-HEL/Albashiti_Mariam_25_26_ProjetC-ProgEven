@@ -39,7 +39,8 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
         private void barreDeProgressionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NonImplementation();
+            EcranProgression progress = new EcranProgression();
+            progress.ShowDialog();
         }
 
         private void editeurToolStripMenuItem_Click(object sender, EventArgs e)
