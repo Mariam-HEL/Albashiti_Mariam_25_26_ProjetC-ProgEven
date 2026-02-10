@@ -95,6 +95,8 @@
             btnConfirmer.Text = "Confirmer";
             btnConfirmer.UseVisualStyleBackColor = true;
             btnConfirmer.Click += btnConfirmer_Click;
+            btnConfirmer.MouseEnter += btnConfirmer_MouseEnter;
+            btnConfirmer.MouseLeave += btnConfirmer_MouseLeave;
             // 
             // EcranAPropos
             // 
