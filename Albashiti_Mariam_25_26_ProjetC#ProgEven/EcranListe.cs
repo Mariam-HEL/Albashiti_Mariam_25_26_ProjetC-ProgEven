@@ -70,7 +70,7 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             if (!string.IsNullOrWhiteSpace(tbNom.Text) && cbQualite.SelectedIndex != -1)
             {
-                lbPersonne.Items.Add($"{tbNom.Text} ({cbQualite.SelectedItem})");
+                lbPersonne.Items.Add(tbNom.Text + "("+ cbQualite.Text+")");
             }
             else
             {
@@ -97,19 +97,46 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                     lignes[i] = lbPersonne.Items[i].ToString();
                 }
                 File.WriteAllLines(NomFichier, lignes);
+
             }
         }
 
         private void lbPersonne_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+
             int index = lbPersonne.SelectedIndex;
 
-            if (index != -1 )
+
+            if (index != -1)
             {
-                string ligneChoisi = lbPersonne.SelectedItems.ToString();
-                string ligne = string.Join(" ", ligneChoisi);
-                MessageBox.Show($"Index : {index}\ncontenu de la ligne choisi : {ligne}\n");
+                //var item = lbPersonne.SelectedItem;
+
+                MessageBox.Show($"index : {index} contenu de la ligne choisi : {lbPersonne.SelectedItem}");
             }
+        }
+        //private int indexModifier = -1;
+        private void bModifier_Click(object sender, EventArgs e)
+        {
+            if (lbPersonne.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez selectionner une personne a modifier ");
+                return;
+            }
+
+            string nom = tbNom.Text.Trim();
+            string qaulite = cbQualite.Text.Trim();
+
+            if (string.IsNullOrEmpty(nom))
+            {
+                MessageBox.Show("Le nom ne doit pas etre vide", "Attention",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                tbNom.Focus();
+                return;
+            }
+
+            int index = lbPersonne.SelectedIndex;
+            lbPersonne.Items[index] = $"{nom} ({qaulite})";
+
+            Activer(false);
         }
     }
 }

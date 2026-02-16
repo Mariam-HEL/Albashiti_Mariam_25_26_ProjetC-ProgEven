@@ -43,6 +43,7 @@
             tbNom = new TextBox();
             ofdOuvrir = new OpenFileDialog();
             sfdEnregistrer = new SaveFileDialog();
+            bModifier = new Button();
             gbDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -135,20 +136,25 @@
             // 
             // lbPersonne
             // 
+            lbPersonne.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbPersonne.ForeColor = Color.DarkGray;
             lbPersonne.FormattingEnabled = true;
+            lbPersonne.ItemHeight = 25;
             lbPersonne.Location = new Point(58, 32);
             lbPersonne.Name = "lbPersonne";
-            lbPersonne.Size = new Size(793, 164);
+            lbPersonne.Size = new Size(793, 154);
             lbPersonne.TabIndex = 9;
             lbPersonne.MouseDoubleClick += lbPersonne_MouseDoubleClick;
             // 
             // cbQualite
             // 
+            cbQualite.BackColor = Color.Gainsboro;
+            cbQualite.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbQualite.FormattingEnabled = true;
             cbQualite.Items.AddRange(new object[] { "Madame", "Mademoiselle", "Monsieur", "Mondamoiseau", "Mondamoiseau" });
             cbQualite.Location = new Point(19, 54);
             cbQualite.Name = "cbQualite";
-            cbQualite.Size = new Size(151, 28);
+            cbQualite.Size = new Size(151, 33);
             cbQualite.TabIndex = 10;
             // 
             // gbDetail
@@ -168,10 +174,22 @@
             // 
             // tbNom
             // 
+            tbNom.BackColor = SystemColors.ButtonFace;
+            tbNom.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbNom.Location = new Point(19, 113);
             tbNom.Name = "tbNom";
-            tbNom.Size = new Size(125, 27);
+            tbNom.Size = new Size(125, 30);
             tbNom.TabIndex = 12;
+            // 
+            // bModifier
+            // 
+            bModifier.Location = new Point(58, 409);
+            bModifier.Name = "bModifier";
+            bModifier.Size = new Size(94, 29);
+            bModifier.TabIndex = 12;
+            bModifier.Text = "Modifier";
+            bModifier.UseVisualStyleBackColor = true;
+            bModifier.Click += bModifier_Click;
             // 
             // EcranListe
             // 
@@ -179,6 +197,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
             ClientSize = new Size(863, 450);
+            Controls.Add(bModifier);
             Controls.Add(gbDetail);
             Controls.Add(lbPersonne);
             Controls.Add(bAjouter);
@@ -212,5 +231,6 @@
         private TextBox tbNom;
         private OpenFileDialog ofdOuvrir;
         private SaveFileDialog sfdEnregistrer;
+        private Button bModifier;
     }
 }
