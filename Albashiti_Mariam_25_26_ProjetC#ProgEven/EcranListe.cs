@@ -8,12 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 {
     public partial class EcranListe : Form
     {
+        private int numeroEncodage = 1;
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
+        private const int smLire = 0x0199;
+        private const int smEcrire = 0x019A;
 
         public EcranListe()
         {
@@ -71,6 +77,10 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             if (!string.IsNullOrWhiteSpace(tbNom.Text) && cbQualite.SelectedIndex != -1)
             {
                 lbPersonne.Items.Add(tbNom.Text + "("+ cbQualite.Text+")");
+                int index = lbPersonne.Items.Count - 1;
+                SendMessage(lbPersonne.Handle, smEcrire, index, numeroEncodage);
+                numeroEncodage++;
+                lbPersonne.Sorted = true;
             }
             else
             {
@@ -109,9 +119,10 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
             if (index != -1)
             {
+                int numeroCache = SendMessage(lbPersonne.Handle, smLire, index, 0);
                 //var item = lbPersonne.SelectedItem;
 
-                MessageBox.Show($"index : {index} contenu de la ligne choisi : {lbPersonne.SelectedItem}");
+                MessageBox.Show($"index : {index} contenu de la ligne choisi : {lbPersonne.SelectedItem} Numero d'encodage : {numeroCache}");
             }
         }
         //private int indexModifier = -1;

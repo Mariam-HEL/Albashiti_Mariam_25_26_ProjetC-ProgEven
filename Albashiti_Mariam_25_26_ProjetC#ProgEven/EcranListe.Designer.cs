@@ -196,7 +196,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
-            ClientSize = new Size(863, 450);
+            ClientSize = new Size(867, 450);
             Controls.Add(bModifier);
             Controls.Add(gbDetail);
             Controls.Add(lbPersonne);
