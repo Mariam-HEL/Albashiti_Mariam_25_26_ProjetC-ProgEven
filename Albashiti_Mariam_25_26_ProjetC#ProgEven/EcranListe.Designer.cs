@@ -81,6 +81,7 @@
             bAnnuler.TabIndex = 3;
             bAnnuler.Text = "Annuler";
             bAnnuler.UseVisualStyleBackColor = true;
+            bAnnuler.Click += bAnnuler_Click;
             // 
             // bConfirmer
             // 
@@ -90,6 +91,7 @@
             bConfirmer.TabIndex = 4;
             bConfirmer.Text = "Confirmer";
             bConfirmer.UseVisualStyleBackColor = true;
+            bConfirmer.Click += bConfirmer_Click;
             // 
             // bOuvrir
             // 
@@ -118,6 +120,7 @@
             bSupprimer.TabIndex = 7;
             bSupprimer.Text = "Supprimer";
             bSupprimer.UseVisualStyleBackColor = true;
+            bSupprimer.Click += bSupprimer_Click;
             // 
             // bAjouter
             // 
@@ -132,6 +135,7 @@
             // lbPersonne
             // 
             lbPersonne.FormattingEnabled = true;
+            lbPersonne.Items.AddRange(new object[] { "Mariam", "Sara", "Basant", "Hello every one in C# winForm programming " });
             lbPersonne.Location = new Point(58, 49);
             lbPersonne.Name = "lbPersonne";
             lbPersonne.Size = new Size(549, 124);

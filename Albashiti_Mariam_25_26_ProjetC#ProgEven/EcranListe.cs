@@ -52,5 +52,31 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             Activer(false);
         }
+
+        private void bSupprimer_Click(object sender, EventArgs e)
+        {
+            if (lbPersonne.SelectedIndex != -1)
+            {
+                lbPersonne.Items.RemoveAt(lbPersonne.SelectedIndex);
+            }
+        }
+
+        private void bConfirmer_Click(object sender, EventArgs e)
+        {
+            if (tbNom.Text != null && cbQualite.SelectedIndex != -1)
+            {
+                lbPersonne.Items.Add($"{tbNom.Text} , ({cbQualite.SelectedItem})");
+            }
+            else
+            {
+                MessageBox.Show("il faut que taper le nom et sa qualite , s'il vous plait", "Warning");
+            }
+
+        }
+
+        private void bAnnuler_Click(object sender, EventArgs e)
+        {
+            Activer(true);
+        }
     }
 }
