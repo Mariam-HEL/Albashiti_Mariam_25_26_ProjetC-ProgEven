@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 {
@@ -25,6 +26,10 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             {
                 NomFichier = ofdOuvrir.FileName;
                 MessageBox.Show(NomFichier);
+                string text = File.ReadAllText(NomFichier);
+                lbPersonne.Items.Add(text);
+
+
             }
 
         }
@@ -63,9 +68,9 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
         private void bConfirmer_Click(object sender, EventArgs e)
         {
-            if (tbNom.Text != null && cbQualite.SelectedIndex != -1)
+            if (!string.IsNullOrWhiteSpace(tbNom.Text) && cbQualite.SelectedIndex != -1)
             {
-                lbPersonne.Items.Add($"{tbNom.Text} , ({cbQualite.SelectedItem})");
+                lbPersonne.Items.Add($"{tbNom.Text} ({cbQualite.SelectedItem})");
             }
             else
             {
@@ -77,6 +82,34 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         private void bAnnuler_Click(object sender, EventArgs e)
         {
             Activer(true);
+        }
+
+        private void bEnregistrer_Click(object sender, EventArgs e)
+        {
+            if (sfdEnregistrer.ShowDialog() == DialogResult.OK)
+            {
+                string NomFichier = sfdEnregistrer.FileName;
+
+                string[] lignes = new string[lbPersonne.Items.Count];
+
+                for (int i = 0; i < lbPersonne.Items.Count; i++)
+                {
+                    lignes[i] = lbPersonne.Items[i].ToString();
+                }
+                File.WriteAllLines(NomFichier, lignes);
+            }
+        }
+
+        private void lbPersonne_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = lbPersonne.SelectedIndex;
+
+            if (index != -1 )
+            {
+                string ligneChoisi = lbPersonne.SelectedItems.ToString();
+                string ligne = string.Join(" ", ligneChoisi);
+                MessageBox.Show($"Index : {index}\ncontenu de la ligne choisi : {ligne}\n");
+            }
         }
     }
 }

@@ -95,7 +95,7 @@
             // 
             // bOuvrir
             // 
-            bOuvrir.Location = new Point(58, 200);
+            bOuvrir.Location = new Point(58, 214);
             bOuvrir.Name = "bOuvrir";
             bOuvrir.Size = new Size(94, 29);
             bOuvrir.TabIndex = 5;
@@ -111,6 +111,7 @@
             bEnregistrer.TabIndex = 6;
             bEnregistrer.Text = "Enregistrer";
             bEnregistrer.UseVisualStyleBackColor = true;
+            bEnregistrer.Click += bEnregistrer_Click;
             // 
             // bSupprimer
             // 
@@ -135,11 +136,11 @@
             // lbPersonne
             // 
             lbPersonne.FormattingEnabled = true;
-            lbPersonne.Items.AddRange(new object[] { "Mariam", "Sara", "Basant", "Hello every one in C# winForm programming " });
-            lbPersonne.Location = new Point(58, 49);
+            lbPersonne.Location = new Point(58, 32);
             lbPersonne.Name = "lbPersonne";
-            lbPersonne.Size = new Size(549, 124);
+            lbPersonne.Size = new Size(793, 164);
             lbPersonne.TabIndex = 9;
+            lbPersonne.MouseDoubleClick += lbPersonne_MouseDoubleClick;
             // 
             // cbQualite
             // 
@@ -158,7 +159,7 @@
             gbDetail.Controls.Add(INom);
             gbDetail.Controls.Add(bConfirmer);
             gbDetail.Controls.Add(bAnnuler);
-            gbDetail.Location = new Point(261, 200);
+            gbDetail.Location = new Point(266, 214);
             gbDetail.Name = "gbDetail";
             gbDetail.Size = new Size(412, 208);
             gbDetail.TabIndex = 11;
@@ -177,7 +178,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
-            ClientSize = new Size(729, 450);
+            ClientSize = new Size(863, 450);
             Controls.Add(gbDetail);
             Controls.Add(lbPersonne);
             Controls.Add(bAjouter);
