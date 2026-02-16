@@ -16,8 +16,12 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             InitializeComponent();
         }
+        private void lbPersonne_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        private void IFichier_Click(object sender, EventArgs e)
+        }
+
+        private void bEnregistrer_Click(object sender, EventArgs e)
         {
 
         }

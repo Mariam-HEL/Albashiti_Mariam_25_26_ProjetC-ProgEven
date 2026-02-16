@@ -41,142 +41,158 @@
             cbQualite = new ComboBox();
             gbDetail = new GroupBox();
             tbNom = new TextBox();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
+            gbDetail.SuspendLayout();
             SuspendLayout();
             // 
             // INom
             // 
             INom.AutoSize = true;
-            INom.Location = new Point(637, 126);
+            INom.Location = new Point(19, 90);
             INom.Name = "INom";
-            INom.Size = new Size(50, 20);
+            INom.Size = new Size(42, 20);
             INom.TabIndex = 0;
-            INom.Text = "label1";
+            INom.Text = "Nom";
             // 
             // IQualite
             // 
             IQualite.AutoSize = true;
-            IQualite.Location = new Point(637, 87);
+            IQualite.Location = new Point(19, 23);
             IQualite.Name = "IQualite";
-            IQualite.Size = new Size(50, 20);
+            IQualite.Size = new Size(57, 20);
             IQualite.TabIndex = 1;
-            IQualite.Text = "label2";
+            IQualite.Text = "Qualite";
             // 
             // IFichier
             // 
             IFichier.AutoSize = true;
-            IFichier.Location = new Point(637, 182);
+            IFichier.Location = new Point(58, 9);
             IFichier.Name = "IFichier";
-            IFichier.Size = new Size(50, 20);
+            IFichier.Size = new Size(108, 20);
             IFichier.TabIndex = 2;
-            IFichier.Text = "label3";
-            IFichier.Click += IFichier_Click;
+            IFichier.Text = "Nom du fichier";
             // 
             // bAnnuler
             // 
-            bAnnuler.Location = new Point(402, 60);
+            bAnnuler.Location = new Point(135, 163);
             bAnnuler.Name = "bAnnuler";
             bAnnuler.Size = new Size(94, 29);
             bAnnuler.TabIndex = 3;
-            bAnnuler.Text = "button1";
+            bAnnuler.Text = "Annuler";
             bAnnuler.UseVisualStyleBackColor = true;
             // 
             // bConfirmer
             // 
-            bConfirmer.Location = new Point(402, 117);
+            bConfirmer.Location = new Point(19, 163);
             bConfirmer.Name = "bConfirmer";
             bConfirmer.Size = new Size(94, 29);
             bConfirmer.TabIndex = 4;
-            bConfirmer.Text = "button2";
+            bConfirmer.Text = "Confirmer";
             bConfirmer.UseVisualStyleBackColor = true;
             // 
             // bOuvrir
             // 
-            bOuvrir.Location = new Point(402, 173);
+            bOuvrir.Location = new Point(58, 200);
             bOuvrir.Name = "bOuvrir";
             bOuvrir.Size = new Size(94, 29);
             bOuvrir.TabIndex = 5;
-            bOuvrir.Text = "button3";
+            bOuvrir.Text = "Ouvrir";
             bOuvrir.UseVisualStyleBackColor = true;
             // 
             // bEnregistrer
             // 
-            bEnregistrer.Location = new Point(402, 235);
+            bEnregistrer.Location = new Point(58, 254);
             bEnregistrer.Name = "bEnregistrer";
             bEnregistrer.Size = new Size(94, 29);
             bEnregistrer.TabIndex = 6;
-            bEnregistrer.Text = "button4";
+            bEnregistrer.Text = "Enregistrer";
             bEnregistrer.UseVisualStyleBackColor = true;
+            bEnregistrer.Click += bEnregistrer_Click;
             // 
             // bSupprimer
             // 
-            bSupprimer.Location = new Point(402, 294);
+            bSupprimer.Location = new Point(58, 379);
             bSupprimer.Name = "bSupprimer";
             bSupprimer.Size = new Size(94, 29);
             bSupprimer.TabIndex = 7;
-            bSupprimer.Text = "button5";
+            bSupprimer.Text = "Supprimer";
             bSupprimer.UseVisualStyleBackColor = true;
             // 
             // bAjouter
             // 
-            bAjouter.Location = new Point(402, 353);
+            bAjouter.Location = new Point(58, 322);
             bAjouter.Name = "bAjouter";
             bAjouter.Size = new Size(94, 29);
             bAjouter.TabIndex = 8;
-            bAjouter.Text = "button6";
+            bAjouter.Text = "Ajouter";
             bAjouter.UseVisualStyleBackColor = true;
             // 
             // lbPersonne
             // 
             lbPersonne.FormattingEnabled = true;
-            lbPersonne.Location = new Point(83, 42);
+            lbPersonne.Location = new Point(58, 49);
             lbPersonne.Name = "lbPersonne";
-            lbPersonne.Size = new Size(150, 104);
+            lbPersonne.Size = new Size(549, 124);
             lbPersonne.TabIndex = 9;
+            lbPersonne.SelectedIndexChanged += lbPersonne_SelectedIndexChanged;
             // 
             // cbQualite
             // 
             cbQualite.FormattingEnabled = true;
-            cbQualite.Location = new Point(82, 182);
+            cbQualite.Items.AddRange(new object[] { "Madame", "Mademoiselle", "Monsieur", "Mondamoiseau", "Mondamoiseau" });
+            cbQualite.Location = new Point(19, 54);
             cbQualite.Name = "cbQualite";
             cbQualite.Size = new Size(151, 28);
             cbQualite.TabIndex = 10;
             // 
             // gbDetail
             // 
-            gbDetail.Location = new Point(82, 257);
+            gbDetail.Controls.Add(tbNom);
+            gbDetail.Controls.Add(IQualite);
+            gbDetail.Controls.Add(cbQualite);
+            gbDetail.Controls.Add(INom);
+            gbDetail.Controls.Add(bConfirmer);
+            gbDetail.Controls.Add(bAnnuler);
+            gbDetail.Location = new Point(261, 200);
             gbDetail.Name = "gbDetail";
-            gbDetail.Size = new Size(250, 125);
+            gbDetail.Size = new Size(346, 208);
             gbDetail.TabIndex = 11;
             gbDetail.TabStop = false;
-            gbDetail.Text = "groupBox1";
+            gbDetail.Text = "Detail presonne";
             // 
             // tbNom
             // 
-            tbNom.Location = new Point(637, 235);
+            tbNom.Location = new Point(19, 113);
             tbNom.Name = "tbNom";
             tbNom.Size = new Size(125, 27);
             tbNom.TabIndex = 12;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "ofdOuvrir";
+            // 
+            // saveFileDialog1
+            // 
+            saveFileDialog1.FileName = "sfdEnregistrer";
             // 
             // EcranListe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(tbNom);
+            BackColor = Color.LemonChiffon;
+            ClientSize = new Size(729, 450);
             Controls.Add(gbDetail);
-            Controls.Add(cbQualite);
             Controls.Add(lbPersonne);
             Controls.Add(bAjouter);
             Controls.Add(bSupprimer);
             Controls.Add(bEnregistrer);
             Controls.Add(bOuvrir);
-            Controls.Add(bConfirmer);
-            Controls.Add(bAnnuler);
             Controls.Add(IFichier);
-            Controls.Add(IQualite);
-            Controls.Add(INom);
             Name = "EcranListe";
             Text = "Manipulation d'une liste";
+            gbDetail.ResumeLayout(false);
+            gbDetail.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -196,5 +212,7 @@
         private ComboBox cbQualite;
         private GroupBox gbDetail;
         private TextBox tbNom;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }
