@@ -41,8 +41,8 @@
             cbQualite = new ComboBox();
             gbDetail = new GroupBox();
             tbNom = new TextBox();
-            openFileDialog1 = new OpenFileDialog();
-            saveFileDialog1 = new SaveFileDialog();
+            ofdOuvrir = new OpenFileDialog();
+            sfdEnregistrer = new SaveFileDialog();
             gbDetail.SuspendLayout();
             SuspendLayout();
             // 
@@ -99,6 +99,7 @@
             bOuvrir.TabIndex = 5;
             bOuvrir.Text = "Ouvrir";
             bOuvrir.UseVisualStyleBackColor = true;
+            bOuvrir.Click += bOuvrir_Click;
             // 
             // bEnregistrer
             // 
@@ -108,11 +109,10 @@
             bEnregistrer.TabIndex = 6;
             bEnregistrer.Text = "Enregistrer";
             bEnregistrer.UseVisualStyleBackColor = true;
-            bEnregistrer.Click += bEnregistrer_Click;
             // 
             // bSupprimer
             // 
-            bSupprimer.Location = new Point(58, 379);
+            bSupprimer.Location = new Point(58, 363);
             bSupprimer.Name = "bSupprimer";
             bSupprimer.Size = new Size(94, 29);
             bSupprimer.TabIndex = 7;
@@ -127,6 +127,7 @@
             bAjouter.TabIndex = 8;
             bAjouter.Text = "Ajouter";
             bAjouter.UseVisualStyleBackColor = true;
+            bAjouter.Click += bAjouter_Click;
             // 
             // lbPersonne
             // 
@@ -135,7 +136,6 @@
             lbPersonne.Name = "lbPersonne";
             lbPersonne.Size = new Size(549, 124);
             lbPersonne.TabIndex = 9;
-            lbPersonne.SelectedIndexChanged += lbPersonne_SelectedIndexChanged;
             // 
             // cbQualite
             // 
@@ -156,7 +156,7 @@
             gbDetail.Controls.Add(bAnnuler);
             gbDetail.Location = new Point(261, 200);
             gbDetail.Name = "gbDetail";
-            gbDetail.Size = new Size(346, 208);
+            gbDetail.Size = new Size(412, 208);
             gbDetail.TabIndex = 11;
             gbDetail.TabStop = false;
             gbDetail.Text = "Detail presonne";
@@ -167,14 +167,6 @@
             tbNom.Name = "tbNom";
             tbNom.Size = new Size(125, 27);
             tbNom.TabIndex = 12;
-            // 
-            // openFileDialog1
-            // 
-            openFileDialog1.FileName = "ofdOuvrir";
-            // 
-            // saveFileDialog1
-            // 
-            saveFileDialog1.FileName = "sfdEnregistrer";
             // 
             // EcranListe
             // 
@@ -191,6 +183,7 @@
             Controls.Add(IFichier);
             Name = "EcranListe";
             Text = "Manipulation d'une liste";
+            Load += EcranListe_Load;
             gbDetail.ResumeLayout(false);
             gbDetail.PerformLayout();
             ResumeLayout(false);
@@ -212,7 +205,7 @@
         private ComboBox cbQualite;
         private GroupBox gbDetail;
         private TextBox tbNom;
-        private OpenFileDialog openFileDialog1;
-        private SaveFileDialog saveFileDialog1;
+        private OpenFileDialog ofdOuvrir;
+        private SaveFileDialog sfdEnregistrer;
     }
 }

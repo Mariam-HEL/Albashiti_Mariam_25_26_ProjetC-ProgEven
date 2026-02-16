@@ -102,5 +102,11 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             Form3 f3 = new Form3();
             f3.ShowDialog();
         }
+
+        private void btnSeance3_Click(object sender, EventArgs e)
+        {
+            EcranListe ecran = new EcranListe();
+            ecran.ShowDialog();
+        }
     }
 }
