@@ -14,6 +14,7 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 {
     public partial class EcranListe : Form
     {
+        private string fichierCourant = "";
         private int numeroEncodage = 1;
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -32,10 +33,23 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             {
                 NomFichier = ofdOuvrir.FileName;
                 MessageBox.Show(NomFichier);
-                string text = File.ReadAllText(NomFichier);
-                lbPersonne.Items.Add(text);
+                string[] text = File.ReadAllLines(NomFichier);
+                lbPersonne.Items.Clear();
+                foreach (string s in text)
+                {
+                    int indexHash = s.IndexOf("#"); 
 
-
+                    if (indexHash >0)
+                    {
+                        string textVisisble = s.Substring(0, indexHash);
+                        lbPersonne.Items.Add(textVisisble);
+                    }
+                    else
+                    {
+                        lbPersonne.Items.AddRange(text);
+                    }
+                }
+                
             }
 
         }
@@ -66,9 +80,28 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
         private void bSupprimer_Click(object sender, EventArgs e)
         {
-            if (lbPersonne.SelectedIndex != -1)
+            if (lbPersonne.SelectedIndex != -1 && fichierCourant != "")
             {
-                lbPersonne.Items.RemoveAt(lbPersonne.SelectedIndex);
+                string[] originalLignes = File.ReadAllLines(fichierCourant);
+                List <string> nouvelleLignes = new List<string>();
+                int newNumber = 1;
+                for(int i = 0;i < originalLignes.Length; i++)
+                {
+                    if (i != lbPersonne.SelectedIndex)
+                    {
+                        string textVisible = originalLignes[i].Split('#')[0];
+                        nouvelleLignes.Add(textVisible+"#" + newNumber);
+                        newNumber++;
+                    }
+                }
+                File.WriteAllLines(fichierCourant, nouvelleLignes);
+                lbPersonne.Items.Clear();
+                foreach (var item in nouvelleLignes)
+                {
+                    lbPersonne.Items.Add(item.Split('#')[0]);
+                }
+               // lbPersonne.Items.RemoveAt(lbPersonne.SelectedIndex);
+
             }
         }
 
@@ -76,10 +109,10 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             if (!string.IsNullOrWhiteSpace(tbNom.Text) && cbQualite.SelectedIndex != -1)
             {
-                lbPersonne.Items.Add(tbNom.Text + "("+ cbQualite.Text+")");
-                int index = lbPersonne.Items.Count - 1;
-                SendMessage(lbPersonne.Handle, smEcrire, index, numeroEncodage);
-                numeroEncodage++;
+                //int index = lbPersonne.Items.Count - 1;
+                //SendMessage(lbPersonne.Handle, smEcrire, index, numeroEncodage);
+                lbPersonne.Items.Add(tbNom.Text + "(" + cbQualite.Text + ") -" /*numeroEncodage*/);
+                //numeroEncodage++;
                 lbPersonne.Sorted = true;
             }
             else
@@ -95,18 +128,19 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         }
 
         private void bEnregistrer_Click(object sender, EventArgs e)
-        {
+        { 
             if (sfdEnregistrer.ShowDialog() == DialogResult.OK)
             {
                 string NomFichier = sfdEnregistrer.FileName;
 
                 string[] lignes = new string[lbPersonne.Items.Count];
-
                 for (int i = 0; i < lbPersonne.Items.Count; i++)
                 {
-                    lignes[i] = lbPersonne.Items[i].ToString();
+                    string texte = lbPersonne.Items[i].ToString();
+                    lignes[i] = texte + "#" + numeroEncodage;
                 }
-                File.WriteAllLines(NomFichier, lignes);
+                File.AppendAllLines(NomFichier, lignes);
+                numeroEncodage++;
 
             }
         }
@@ -122,7 +156,7 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                 int numeroCache = SendMessage(lbPersonne.Handle, smLire, index, 0);
                 //var item = lbPersonne.SelectedItem;
 
-                MessageBox.Show($"index : {index} contenu de la ligne choisi : {lbPersonne.SelectedItem} Numero d'encodage : {numeroCache}");
+                MessageBox.Show($"index : {index} contenu de la ligne choisi : {lbPersonne.SelectedItem} Numero d'encodage : #{numeroCache}");
             }
         }
         //private int indexModifier = -1;
