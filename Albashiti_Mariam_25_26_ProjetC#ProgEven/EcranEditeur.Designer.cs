@@ -146,12 +146,14 @@
             enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
             enregistrerToolStripMenuItem.Size = new Size(224, 26);
             enregistrerToolStripMenuItem.Text = "Enregistrer";
+            enregistrerToolStripMenuItem.Click += enregistrerToolStripMenuItem_Click;
             // 
             // quitterToolStripMenuItem
             // 
             quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             quitterToolStripMenuItem.Size = new Size(224, 26);
             quitterToolStripMenuItem.Text = "Quitter";
+            quitterToolStripMenuItem.Click += quitterToolStripMenuItem_Click;
             // 
             // edToolStripMenuItem
             // 
