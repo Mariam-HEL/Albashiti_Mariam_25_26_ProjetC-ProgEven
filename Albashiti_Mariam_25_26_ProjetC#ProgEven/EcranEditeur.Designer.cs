@@ -35,29 +35,29 @@
             pbOuvrir = new PictureBox();
             menuStrip1 = new MenuStrip();
             fichierToolStripMenuItem = new ToolStripMenuItem();
-            edToolStripMenuItem = new ToolStripMenuItem();
-            formatToolStripMenuItem = new ToolStripMenuItem();
-            rtbTexte = new RichTextBox();
-            ofdOuvrir = new OpenFileDialog();
-            sfdEnregistrer = new SaveFileDialog();
-            fdPolice = new FontDialog();
             nouveauToolStripMenuItem = new ToolStripMenuItem();
             ouvrirToolStripMenuItem = new ToolStripMenuItem();
             enregistrerToolStripMenuItem = new ToolStripMenuItem();
             quitterToolStripMenuItem = new ToolStripMenuItem();
+            edToolStripMenuItem = new ToolStripMenuItem();
             copierToolStripMenuItem = new ToolStripMenuItem();
             couperToolStripMenuItem = new ToolStripMenuItem();
             collerToolStripMenuItem = new ToolStripMenuItem();
+            formatToolStripMenuItem = new ToolStripMenuItem();
             justifierToolStripMenuItem = new ToolStripMenuItem();
-            policeToolStripMenuItem = new ToolStripMenuItem();
-            caractèreToolStripMenuItem = new ToolStripMenuItem();
             gaucheToolStripMenuItem = new ToolStripMenuItem();
             centreToolStripMenuItem = new ToolStripMenuItem();
             droiteToolStripMenuItem = new ToolStripMenuItem();
+            policeToolStripMenuItem = new ToolStripMenuItem();
+            caractèreToolStripMenuItem = new ToolStripMenuItem();
             grasToolStripMenuItem = new ToolStripMenuItem();
             italiqueToolStripMenuItem = new ToolStripMenuItem();
             soulignéToolStripMenuItem = new ToolStripMenuItem();
             barréToolStripMenuItem = new ToolStripMenuItem();
+            rtbTexte = new RichTextBox();
+            ofdOuvrir = new OpenFileDialog();
+            sfdEnregistrer = new SaveFileDialog();
+            fdPolice = new FontDialog();
             pMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbQuitter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbNouveau).BeginInit();
@@ -127,33 +127,6 @@
             fichierToolStripMenuItem.Size = new Size(66, 24);
             fichierToolStripMenuItem.Text = "Fichier";
             // 
-            // edToolStripMenuItem
-            // 
-            edToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { copierToolStripMenuItem, couperToolStripMenuItem, collerToolStripMenuItem });
-            edToolStripMenuItem.Name = "edToolStripMenuItem";
-            edToolStripMenuItem.Size = new Size(70, 24);
-            edToolStripMenuItem.Text = "Edition";
-            // 
-            // formatToolStripMenuItem
-            // 
-            formatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { justifierToolStripMenuItem, policeToolStripMenuItem, caractèreToolStripMenuItem });
-            formatToolStripMenuItem.Name = "formatToolStripMenuItem";
-            formatToolStripMenuItem.Size = new Size(70, 24);
-            formatToolStripMenuItem.Text = "Format";
-            // 
-            // rtbTexte
-            // 
-            rtbTexte.Location = new Point(12, 74);
-            rtbTexte.Name = "rtbTexte";
-            rtbTexte.Size = new Size(776, 364);
-            rtbTexte.TabIndex = 2;
-            rtbTexte.Text = "";
-            rtbTexte.TextChanged += rtbTexte_TextChanged;
-            // 
-            // ofdOuvrir
-            // 
-            ofdOuvrir.FileName = "openFileDialog1";
-            // 
             // nouveauToolStripMenuItem
             // 
             nouveauToolStripMenuItem.Name = "nouveauToolStripMenuItem";
@@ -166,6 +139,7 @@
             ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             ouvrirToolStripMenuItem.Size = new Size(224, 26);
             ouvrirToolStripMenuItem.Text = "Ouvrir";
+            ouvrirToolStripMenuItem.Click += ouvrirToolStripMenuItem_Click;
             // 
             // enregistrerToolStripMenuItem
             // 
@@ -179,85 +153,112 @@
             quitterToolStripMenuItem.Size = new Size(224, 26);
             quitterToolStripMenuItem.Text = "Quitter";
             // 
+            // edToolStripMenuItem
+            // 
+            edToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { copierToolStripMenuItem, couperToolStripMenuItem, collerToolStripMenuItem });
+            edToolStripMenuItem.Name = "edToolStripMenuItem";
+            edToolStripMenuItem.Size = new Size(70, 24);
+            edToolStripMenuItem.Text = "Edition";
+            // 
             // copierToolStripMenuItem
             // 
             copierToolStripMenuItem.Name = "copierToolStripMenuItem";
-            copierToolStripMenuItem.Size = new Size(224, 26);
+            copierToolStripMenuItem.Size = new Size(140, 26);
             copierToolStripMenuItem.Text = "Copier";
             // 
             // couperToolStripMenuItem
             // 
             couperToolStripMenuItem.Name = "couperToolStripMenuItem";
-            couperToolStripMenuItem.Size = new Size(224, 26);
+            couperToolStripMenuItem.Size = new Size(140, 26);
             couperToolStripMenuItem.Text = "Couper";
             // 
             // collerToolStripMenuItem
             // 
             collerToolStripMenuItem.Name = "collerToolStripMenuItem";
-            collerToolStripMenuItem.Size = new Size(224, 26);
+            collerToolStripMenuItem.Size = new Size(140, 26);
             collerToolStripMenuItem.Text = "Coller";
+            // 
+            // formatToolStripMenuItem
+            // 
+            formatToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { justifierToolStripMenuItem, policeToolStripMenuItem, caractèreToolStripMenuItem });
+            formatToolStripMenuItem.Name = "formatToolStripMenuItem";
+            formatToolStripMenuItem.Size = new Size(70, 24);
+            formatToolStripMenuItem.Text = "Format";
             // 
             // justifierToolStripMenuItem
             // 
             justifierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gaucheToolStripMenuItem, centreToolStripMenuItem, droiteToolStripMenuItem });
             justifierToolStripMenuItem.Name = "justifierToolStripMenuItem";
-            justifierToolStripMenuItem.Size = new Size(224, 26);
+            justifierToolStripMenuItem.Size = new Size(155, 26);
             justifierToolStripMenuItem.Text = "Justifier";
+            // 
+            // gaucheToolStripMenuItem
+            // 
+            gaucheToolStripMenuItem.Name = "gaucheToolStripMenuItem";
+            gaucheToolStripMenuItem.Size = new Size(141, 26);
+            gaucheToolStripMenuItem.Text = "Gauche";
+            // 
+            // centreToolStripMenuItem
+            // 
+            centreToolStripMenuItem.Name = "centreToolStripMenuItem";
+            centreToolStripMenuItem.Size = new Size(141, 26);
+            centreToolStripMenuItem.Text = "Centre";
+            // 
+            // droiteToolStripMenuItem
+            // 
+            droiteToolStripMenuItem.Name = "droiteToolStripMenuItem";
+            droiteToolStripMenuItem.Size = new Size(141, 26);
+            droiteToolStripMenuItem.Text = "Droite ";
             // 
             // policeToolStripMenuItem
             // 
             policeToolStripMenuItem.Name = "policeToolStripMenuItem";
-            policeToolStripMenuItem.Size = new Size(224, 26);
+            policeToolStripMenuItem.Size = new Size(155, 26);
             policeToolStripMenuItem.Text = "Police";
             // 
             // caractèreToolStripMenuItem
             // 
             caractèreToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { grasToolStripMenuItem, italiqueToolStripMenuItem, soulignéToolStripMenuItem, barréToolStripMenuItem });
             caractèreToolStripMenuItem.Name = "caractèreToolStripMenuItem";
-            caractèreToolStripMenuItem.Size = new Size(224, 26);
+            caractèreToolStripMenuItem.Size = new Size(155, 26);
             caractèreToolStripMenuItem.Text = "Caractère";
-            // 
-            // gaucheToolStripMenuItem
-            // 
-            gaucheToolStripMenuItem.Name = "gaucheToolStripMenuItem";
-            gaucheToolStripMenuItem.Size = new Size(224, 26);
-            gaucheToolStripMenuItem.Text = "Gauche";
-            // 
-            // centreToolStripMenuItem
-            // 
-            centreToolStripMenuItem.Name = "centreToolStripMenuItem";
-            centreToolStripMenuItem.Size = new Size(224, 26);
-            centreToolStripMenuItem.Text = "Centre";
-            // 
-            // droiteToolStripMenuItem
-            // 
-            droiteToolStripMenuItem.Name = "droiteToolStripMenuItem";
-            droiteToolStripMenuItem.Size = new Size(224, 26);
-            droiteToolStripMenuItem.Text = "Droite ";
             // 
             // grasToolStripMenuItem
             // 
             grasToolStripMenuItem.Name = "grasToolStripMenuItem";
-            grasToolStripMenuItem.Size = new Size(224, 26);
+            grasToolStripMenuItem.Size = new Size(150, 26);
             grasToolStripMenuItem.Text = "Gras";
             // 
             // italiqueToolStripMenuItem
             // 
             italiqueToolStripMenuItem.Name = "italiqueToolStripMenuItem";
-            italiqueToolStripMenuItem.Size = new Size(224, 26);
+            italiqueToolStripMenuItem.Size = new Size(150, 26);
             italiqueToolStripMenuItem.Text = "Italique";
             // 
             // soulignéToolStripMenuItem
             // 
             soulignéToolStripMenuItem.Name = "soulignéToolStripMenuItem";
-            soulignéToolStripMenuItem.Size = new Size(224, 26);
+            soulignéToolStripMenuItem.Size = new Size(150, 26);
             soulignéToolStripMenuItem.Text = "Souligné";
             // 
             // barréToolStripMenuItem
             // 
             barréToolStripMenuItem.Name = "barréToolStripMenuItem";
-            barréToolStripMenuItem.Size = new Size(224, 26);
+            barréToolStripMenuItem.Size = new Size(150, 26);
             barréToolStripMenuItem.Text = "Barré ";
+            // 
+            // rtbTexte
+            // 
+            rtbTexte.Location = new Point(12, 74);
+            rtbTexte.Name = "rtbTexte";
+            rtbTexte.Size = new Size(776, 364);
+            rtbTexte.TabIndex = 2;
+            rtbTexte.Text = "";
+            rtbTexte.TextChanged += rtbTexte_TextChanged;
+            // 
+            // ofdOuvrir
+            // 
+            ofdOuvrir.FileName = "openFileDialog1";
             // 
             // EcranEditeur
             // 

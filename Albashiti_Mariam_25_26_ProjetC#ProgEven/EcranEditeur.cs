@@ -97,12 +97,29 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
         private void nouveauToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!VerifierSauver())
+            if (!VerifierSauver())
                 return; // l'utilisateur a annule l'operation
 
             rtbTexte.Clear();
             sFichier = "";
             bModifier = false;
+        }
+
+        private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(!VerifierSauver())
+                return;
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Fichiers texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*";
+
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                sFichier = ofd.FileName;
+                rtbTexte.Text = System.IO.File.ReadAllText(sFichier);
+
+                bModifier = false;
+            }
         }
     }
 }
