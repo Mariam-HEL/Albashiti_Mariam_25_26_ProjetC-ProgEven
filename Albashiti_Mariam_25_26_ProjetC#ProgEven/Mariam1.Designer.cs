@@ -41,6 +41,7 @@
             label1 = new Label();
             btnSeance2 = new Button();
             btnSeance3 = new Button();
+            btnSeance5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -164,7 +165,7 @@
             // 
             // btnSeance2
             // 
-            btnSeance2.Location = new Point(31, 383);
+            btnSeance2.Location = new Point(31, 342);
             btnSeance2.Name = "btnSeance2";
             btnSeance2.Size = new Size(263, 29);
             btnSeance2.TabIndex = 10;
@@ -174,7 +175,7 @@
             // 
             // btnSeance3
             // 
-            btnSeance3.Location = new Point(31, 442);
+            btnSeance3.Location = new Point(31, 393);
             btnSeance3.Name = "btnSeance3";
             btnSeance3.Size = new Size(263, 29);
             btnSeance3.TabIndex = 11;
@@ -182,12 +183,23 @@
             btnSeance3.UseVisualStyleBackColor = true;
             btnSeance3.Click += btnSeance3_Click;
             // 
+            // btnSeance5
+            // 
+            btnSeance5.Location = new Point(31, 441);
+            btnSeance5.Name = "btnSeance5";
+            btnSeance5.Size = new Size(263, 29);
+            btnSeance5.TabIndex = 12;
+            btnSeance5.Text = "Cliquez ici pour aller au seance 5";
+            btnSeance5.UseVisualStyleBackColor = true;
+            btnSeance5.Click += btnSeance5_Click;
+            // 
             // Mariam1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1128, 568);
+            Controls.Add(btnSeance5);
             Controls.Add(btnSeance3);
             Controls.Add(btnSeance2);
             Controls.Add(label1);
@@ -227,5 +239,6 @@
         private Label label1;
         private Button btnSeance2;
         private Button btnSeance3;
+        private Button btnSeance5;
     }
 }

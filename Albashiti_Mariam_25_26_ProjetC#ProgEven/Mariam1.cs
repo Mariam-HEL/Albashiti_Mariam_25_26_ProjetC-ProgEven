@@ -108,5 +108,11 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             EcranListe ecran = new EcranListe();
             ecran.ShowDialog();
         }
+
+        private void btnSeance5_Click(object sender, EventArgs e)
+        {
+            EcranEditeur eD = new EcranEditeur();
+            eD.ShowDialog();
+        }
     }
 }

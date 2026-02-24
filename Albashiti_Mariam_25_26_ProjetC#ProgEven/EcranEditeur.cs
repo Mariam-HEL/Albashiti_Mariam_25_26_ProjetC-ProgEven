@@ -42,9 +42,9 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             else
             {
                 rtbTexte.SaveFile(sFichier, RichTextBoxStreamType.PlainText);
-                rtbTexte.Modified = false;  
+                rtbTexte.Modified = false;
             }
-            System.IO.File.WriteAllText(sFichier,rtbTexte.Text);
+            System.IO.File.WriteAllText(sFichier, rtbTexte.Text);
             bModifier = false;
 
         }
@@ -80,6 +80,7 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         private void rtbTexte_TextChanged(object sender, EventArgs e)
         {
             rtbTexte.Dock = DockStyle.Fill;
+            bModifier = true;
         }
 
         private void pMenu_Paint(object sender, PaintEventArgs e)
@@ -90,6 +91,16 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
         private void EcranEditeur_Load(object sender, EventArgs e)
         {
+            sFichier = "";
+            bModifier = false;
+        }
+
+        private void nouveauToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(!VerifierSauver())
+                return; // l'utilisateur a annule l'operation
+
+            rtbTexte.Clear();
             sFichier = "";
             bModifier = false;
         }
