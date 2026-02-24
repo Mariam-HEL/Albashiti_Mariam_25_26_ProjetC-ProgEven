@@ -214,7 +214,6 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             {
                 rtbTexte.SelectionFont = fd.Font; 
             }
-
         }
     }
 }
