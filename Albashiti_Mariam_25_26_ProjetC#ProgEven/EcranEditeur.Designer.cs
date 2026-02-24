@@ -59,6 +59,7 @@
             pMenu.Name = "pMenu";
             pMenu.Size = new Size(803, 42);
             pMenu.TabIndex = 0;
+            pMenu.Paint += pMenu_Paint;
             // 
             // pbQuitter
             // 
@@ -144,6 +145,7 @@
             MainMenuStrip = menuStrip1;
             Name = "EcranEditeur";
             Text = "traitement de texte....en toute modestie";
+            Load += EcranEditeur_Load;
             pMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbQuitter).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbNouveau).EndInit();

@@ -12,11 +12,13 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 {
     public partial class EcranEditeur : Form
     {
-        string sFichier = "";
-        bool bModifier = false;
+        private string sFichier;
+        private bool bModifier;
         public EcranEditeur()
         {
             InitializeComponent();
+            sFichier = "";
+            bModifier = false;
         }
         public void FichierEnregistrer()
         {
@@ -30,42 +32,66 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                 {
                     sFichier = saveF.FileName;
                     rtbTexte.SaveFile(sFichier, RichTextBoxStreamType.PlainText);
-                    rtbTexte.Modified = false;
+                    //rtbTexte.Modified = false;
+                }
+                else
+                {
+                    return; //annuler l'enregistrement
                 }
             }
             else
             {
                 rtbTexte.SaveFile(sFichier, RichTextBoxStreamType.PlainText);
-                rtbTexte.Modified = false;
+                rtbTexte.Modified = false;  
             }
-            
+            System.IO.File.WriteAllText(sFichier,rtbTexte.Text);
+            bModifier = false;
+
         }
 
         private bool VerifierSauver()
         {
-            if (!rtbTexte.Modified)
-                return true;
+            if (bModifier)
+            {
+                DialogResult resultat = MessageBox.Show("Voulez vous enregistrer la modifications ?",
+                    "Attention", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning
+                    );
 
-            DialogResult reponse = MessageBox.Show("Voulez-vous sasivegarder les modifocation?" , 
-                "Confirmation" , MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question);
-            if(reponse == DialogResult.Yes)
-            {
-                FichierEnregistrer();
-                return true;
-            }
-            else if (reponse == DialogResult.No)
-            {
-                return true;
+                if (resultat == DialogResult.Yes)
+                {
+                    FichierEnregistrer();
+                    return true;
+                }
+                else if (resultat == DialogResult.No)
+                {
+                    return true; // continue sans enregistrement 
+                }
+                else
+                {
+                    return false; //annuler 
+                }
             }
             else
             {
-                return false;
+                return true; // le texte n'a pas cahnge / modifiee 
             }
         }
 
         private void rtbTexte_TextChanged(object sender, EventArgs e)
         {
+            rtbTexte.Dock = DockStyle.Fill;
+        }
 
+        private void pMenu_Paint(object sender, PaintEventArgs e)
+        {
+            pMenu.Dock = DockStyle.Top;
+
+        }
+
+        private void EcranEditeur_Load(object sender, EventArgs e)
+        {
+            sFichier = "";
+            bModifier = false;
         }
     }
 }
