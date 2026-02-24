@@ -134,5 +134,87 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
             this.Close();
         }
+
+        private void copierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.Copy();
+        }
+
+        private void couperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.Cut();
+        }
+
+        private void collerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.Paste();
+        }
+
+        //Gras
+        private void grasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbTexte.SelectionFont != null)
+            {
+                FontStyle style = rtbTexte.SelectionFont.Style ^ FontStyle.Bold;
+                rtbTexte.SelectionFont = new Font(rtbTexte.SelectionFont, style);
+            }
+        }
+        //Italique
+        private void italiqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbTexte.SelectionFont != null)
+            {
+                FontStyle style = rtbTexte.SelectionFont.Style ^ FontStyle.Italic;
+                rtbTexte.SelectionFont = new Font(rtbTexte.SelectionFont, style);
+            }
+        }
+        // Souligné
+        private void soulignéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbTexte.SelectionFont != null)
+            {
+                FontStyle style = rtbTexte.SelectionFont.Style ^ FontStyle.Underline;
+                rtbTexte.SelectionFont = new Font(rtbTexte.SelectionFont, style);
+            }
+        }
+        //Barré
+        private void barréToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbTexte.SelectionFont != null)
+            {
+                // On inverse l'état Strikeout
+                FontStyle style = rtbTexte.SelectionFont.Style ^ FontStyle.Strikeout;
+                rtbTexte.SelectionFont = new Font(rtbTexte.SelectionFont, style);
+            }
+
+        }
+        //Gauche
+        private void gaucheToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.SelectionAlignment = HorizontalAlignment.Left;
+        }
+        //Center
+        private void centreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.SelectionAlignment = HorizontalAlignment.Center;
+        }
+        //Droite
+        private void droiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbTexte.SelectionAlignment = HorizontalAlignment.Right;
+        }
+        //Changer la police d'un texte selectionée 
+        private void policeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog fd = new FontDialog();
+            if (rtbTexte.SelectionFont != null)
+                fd.Font = rtbTexte.SelectionFont;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                rtbTexte.SelectionFont = fd.Font; 
+            }
+
+        }
     }
 }

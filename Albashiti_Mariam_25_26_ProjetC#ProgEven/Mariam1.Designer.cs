@@ -189,7 +189,7 @@
             btnSeance5.Name = "btnSeance5";
             btnSeance5.Size = new Size(263, 29);
             btnSeance5.TabIndex = 12;
-            btnSeance5.Text = "Cliquez ici pour aller au seance 5";
+            btnSeance5.Text = "Cliquez ici pour aller au seance 5 !";
             btnSeance5.UseVisualStyleBackColor = true;
             btnSeance5.Click += btnSeance5_Click;
             // 
