@@ -92,6 +92,7 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                         string textVisible = originalLignes[i].Split('#')[0];
                         nouvelleLignes.Add(textVisible+"#" + newNumber);
                         newNumber++;
+                        lbPersonne.Items.RemoveAt(lbPersonne.SelectedIndex);
                     }
                 }
                 File.WriteAllLines(fichierCourant, nouvelleLignes);
