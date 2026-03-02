@@ -42,6 +42,7 @@
             btnSeance2 = new Button();
             btnSeance3 = new Button();
             btnSeance5 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -193,12 +194,23 @@
             btnSeance5.UseVisualStyleBackColor = true;
             btnSeance5.Click += btnSeance5_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(31, 489);
+            button1.Name = "button1";
+            button1.Size = new Size(263, 29);
+            button1.TabIndex = 13;
+            button1.Text = "Cliquez ici pour aller au seance 6 !";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
             // Mariam1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1128, 568);
+            Controls.Add(button1);
             Controls.Add(btnSeance5);
             Controls.Add(btnSeance3);
             Controls.Add(btnSeance2);
@@ -240,5 +252,6 @@
         private Button btnSeance2;
         private Button btnSeance3;
         private Button btnSeance5;
+        private Button button1;
     }
 }

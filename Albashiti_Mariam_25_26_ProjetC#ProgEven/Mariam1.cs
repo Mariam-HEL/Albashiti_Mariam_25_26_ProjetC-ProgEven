@@ -114,5 +114,11 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             EcranEditeur eD = new EcranEditeur();
             eD.ShowDialog();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FicSpirographe fs = new FicSpirographe();
+            fs.ShowDialog();
+        }
     }
 }
