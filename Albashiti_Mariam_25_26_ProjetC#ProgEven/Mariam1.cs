@@ -120,5 +120,11 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             FicSpirographe fs = new FicSpirographe();
             fs.ShowDialog();
         }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            EcranClavierSouris cs = new EcranClavierSouris();
+            cs.ShowDialog();
+        }
     }
 }
