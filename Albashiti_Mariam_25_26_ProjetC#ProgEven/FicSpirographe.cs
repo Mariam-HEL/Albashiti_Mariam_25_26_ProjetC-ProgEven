@@ -27,28 +27,28 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         }
         private void bGo_Click(object sender, EventArgs e)
         {
-            int iSommets = tbSommets.Value;      
-            int iDensite = tbDensite.Value;      
-            int iProfondeur = tbProfondeur.Value; 
+            int iSommets = tbSommets.Value;
+            int iDensite = tbDensite.Value;
+            int iProfondeur = tbProfondeur.Value;
 
             if (iDensite <= 0) iDensite = 1;
 
-           
+
             int zoneX = gbParametrag.Right + 10;
             int largeur = ClientSize.Width - zoneX - 10;
             int hauteur = ClientSize.Height - 20;
 
-            
+
             double xc = zoneX + largeur / 2.0;
             double yc = hauteur / 2.0;
 
-            
+
             double rayon = Math.Min(largeur, hauteur) / 2.0 - 10;
 
-            
+
             gpSauvegarde = new GraphicsPath();
 
-            
+
             double[] sx = new double[iSommets + 1];
             double[] sy = new double[iSommets + 1];
 
@@ -58,12 +58,12 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                 sy[i] = yc + rayon * Math.Sin(2 * Math.PI * i / iSommets);
             }
 
-         
+
             double distanceStop = rayon * iProfondeur / 100.0;
 
             while (true)
             {
-                
+
                 for (int i = 0; i < iSommets; i++)
                 {
                     gpSauvegarde.AddLine(
@@ -71,7 +71,7 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                         (float)sx[i + 1], (float)sy[i + 1]);
                 }
 
-                
+
                 double[] sxNew = new double[iSommets + 1];
                 double[] syNew = new double[iSommets + 1];
 
@@ -81,23 +81,23 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                     syNew[i] = sy[i] + (sy[i + 1] - sy[i]) / iDensite;
                 }
 
-                
+
                 sxNew[iSommets] = sxNew[0];
                 syNew[iSommets] = syNew[0];
 
-                   
+
                 double dx = sxNew[0] - xc;
                 double dy = syNew[0] - yc;
                 double distance = Math.Sqrt(dx * dx + dy * dy);
 
-                  
+
                 if (distance < distanceStop)
                     break;
 
-                  
+
                 sx = sxNew;
                 sy = syNew;
-            }   
+            }
             Invalidate(new Rectangle(zoneX, 0, largeur, ClientSize.Height));
         }
         //private void bGo_Click(object sender, EventArgs e)
@@ -170,13 +170,13 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 
             {
 
-             e.Graphics.FillRectangle(
+                e.Graphics.FillRectangle(
 
-             new SolidBrush(cFond),
+                new SolidBrush(cFond),
 
-             new Rectangle(new Point(340, 0), ClientSize));
+                new Rectangle(new Point(340, 0), ClientSize));
 
-             e.Graphics.DrawPath(new Pen(cTrait), gpSauvegarde);
+                e.Graphics.DrawPath(new Pen(cTrait), gpSauvegarde);
 
             }
 
@@ -205,6 +205,12 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             //td.ShowHelp = true;
             cTrait = td.Color;
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormHorloge horloge = new FormHorloge();
+            horloge.Show();
         }
     }
 }

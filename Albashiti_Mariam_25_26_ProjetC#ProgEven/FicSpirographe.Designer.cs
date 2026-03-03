@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             gbParametrag = new GroupBox();
+            button1 = new Button();
             tbProfondeur = new TrackBar();
             tbDensite = new TrackBar();
             tbSommets = new TrackBar();
@@ -47,6 +48,7 @@
             // 
             // gbParametrag
             // 
+            gbParametrag.Controls.Add(button1);
             gbParametrag.Controls.Add(tbProfondeur);
             gbParametrag.Controls.Add(tbDensite);
             gbParametrag.Controls.Add(tbSommets);
@@ -62,6 +64,16 @@
             gbParametrag.TabIndex = 0;
             gbParametrag.TabStop = false;
             gbParametrag.Text = "Parametrage";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(6, 387);
+            button1.Name = "button1";
+            button1.Size = new Size(262, 29);
+            button1.TabIndex = 1;
+            button1.Text = "Horloge";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // tbProfondeur
             // 
@@ -86,7 +98,7 @@
             // 
             // bFond
             // 
-            bFond.Location = new Point(183, 382);
+            bFond.Location = new Point(174, 341);
             bFond.Name = "bFond";
             bFond.Size = new Size(94, 29);
             bFond.TabIndex = 5;
@@ -96,7 +108,7 @@
             // 
             // bTrait
             // 
-            bTrait.Location = new Point(6, 382);
+            bTrait.Location = new Point(6, 341);
             bTrait.Name = "bTrait";
             bTrait.Size = new Size(94, 29);
             bTrait.TabIndex = 4;
@@ -106,7 +118,7 @@
             // 
             // bGo
             // 
-            bGo.Location = new Point(39, 329);
+            bGo.Location = new Point(39, 296);
             bGo.Name = "bGo";
             bGo.Size = new Size(202, 29);
             bGo.TabIndex = 1;
@@ -171,5 +183,6 @@
         private TrackBar tbDensite;
         private TrackBar tbSommets;
         private ColorDialog cdCouleur;
+        private Button button1;
     }
 }
