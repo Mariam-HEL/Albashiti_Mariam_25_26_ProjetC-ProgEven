@@ -112,6 +112,7 @@
             butRAZ.TabIndex = 7;
             butRAZ.Text = "Remise a zero";
             butRAZ.UseVisualStyleBackColor = true;
+            butRAZ.Click += butRAZ_Click;
             // 
             // tbxClicGauche
             // 

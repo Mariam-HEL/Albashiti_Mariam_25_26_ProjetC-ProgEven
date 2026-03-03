@@ -12,6 +12,8 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
 {
     public partial class EcranClavierSouris : Form
     {
+        int nbGauche;
+        int nbDroit;
         public EcranClavierSouris()
         {
             InitializeComponent();
@@ -27,19 +29,22 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             if (e.Button == MouseButtons.Left)
             {
-                int compteur;
-                int.TryParse(tbxClicGauche.Text, out compteur);
-                compteur++;
-                tbxClicGauche.Text = compteur.ToString();
+                nbGauche++;
+                //int compteur;
+                //int.TryParse(tbxClicGauche.Text, out compteur);
+                //compteur++;
+                //tbxClicGauche.Text = compteur.ToString();
             }
 
             if (e.Button == MouseButtons.Right)
             {
-                int compteur;
-                int.TryParse(tbxClicDroit.Text, out compteur);
-                compteur++;
-                tbxClicDroit.Text = compteur.ToString();
+                nbDroit++;
+                //int compteur;
+                //int.TryParse(tbxClicDroit.Text, out compteur);
+                //compteur++;
+                //tbxClicDroit.Text = compteur.ToString();
             }
+            AfficherClic();
         }
 
         private void EcranClavierSouris_KeyDown(object sender, KeyEventArgs e)
@@ -61,5 +66,23 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
         {
             lsbClavier.Items.Add("KeyPress: " + e.KeyCode.ToString());
         }
+        private void AfficherClic()
+        {
+            tbxClicGauche.Text = nbGauche.ToString(); // Met à jour le TextBox du clic gauche
+            tbxClicDroit.Text = nbDroit.ToString();   // Met à jour le TextBox du clic droit
+        }
+
+        private void butRAZ_Click(object sender, EventArgs e)
+        {
+            tbxClicGauche.Text = "0";
+            tbxClicDroit.Text = "0";
+            AfficherClic();
+            lsbClavier.Items.Clear();
+            tbxPositionX.Text = "0";
+            tbxPositionY.Text = "0";
+        }
+
+
+
     }
 }
