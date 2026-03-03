@@ -45,6 +45,12 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
                 //tbxClicDroit.Text = compteur.ToString();
             }
             AfficherClic();
+            int caseWidth = pnlSouris.Width / 3;
+            int caseHeight = pnlSouris.Height / 3;
+
+            int colonne = e.X / caseWidth;
+            int ligne = e.Y / caseHeight;  
+            lsbClavier.Items.Add($"Clic dans la case : Ligne {ligne + 1}, Colonne {colonne + 1}");
         }
 
         private void EcranClavierSouris_KeyDown(object sender, KeyEventArgs e)
