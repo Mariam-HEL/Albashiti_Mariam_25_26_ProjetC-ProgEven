@@ -44,6 +44,7 @@
             btnSeance5 = new Button();
             button1 = new Button();
             btn7 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -167,7 +168,7 @@
             // 
             // btnSeance2
             // 
-            btnSeance2.Location = new Point(31, 342);
+            btnSeance2.Location = new Point(31, 298);
             btnSeance2.Name = "btnSeance2";
             btnSeance2.Size = new Size(263, 29);
             btnSeance2.TabIndex = 10;
@@ -177,7 +178,7 @@
             // 
             // btnSeance3
             // 
-            btnSeance3.Location = new Point(31, 393);
+            btnSeance3.Location = new Point(31, 333);
             btnSeance3.Name = "btnSeance3";
             btnSeance3.Size = new Size(263, 29);
             btnSeance3.TabIndex = 11;
@@ -187,7 +188,7 @@
             // 
             // btnSeance5
             // 
-            btnSeance5.Location = new Point(31, 441);
+            btnSeance5.Location = new Point(31, 368);
             btnSeance5.Name = "btnSeance5";
             btnSeance5.Size = new Size(263, 29);
             btnSeance5.TabIndex = 12;
@@ -197,7 +198,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(31, 492);
+            button1.Location = new Point(31, 403);
             button1.Name = "button1";
             button1.Size = new Size(263, 29);
             button1.TabIndex = 13;
@@ -207,7 +208,7 @@
             // 
             // btn7
             // 
-            btn7.Location = new Point(31, 527);
+            btn7.Location = new Point(31, 438);
             btn7.Name = "btn7";
             btn7.Size = new Size(263, 29);
             btn7.TabIndex = 14;
@@ -215,12 +216,23 @@
             btn7.UseVisualStyleBackColor = true;
             btn7.Click += btn7_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(31, 484);
+            button2.Name = "button2";
+            button2.Size = new Size(263, 29);
+            button2.TabIndex = 15;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Mariam1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1128, 568);
+            Controls.Add(button2);
             Controls.Add(btn7);
             Controls.Add(button1);
             Controls.Add(btnSeance5);
@@ -266,5 +278,6 @@
         private Button btnSeance5;
         private Button button1;
         private Button btn7;
+        private Button button2;
     }
 }

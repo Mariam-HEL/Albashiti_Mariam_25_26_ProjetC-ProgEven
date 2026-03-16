@@ -126,5 +126,12 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             EcranClavierSouris cs = new EcranClavierSouris();
             cs.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EcranExplorateur eW = new EcranExplorateur();
+            eW.ShowDialog();
+        }
+       
     }
 }
