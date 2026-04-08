@@ -22,16 +22,21 @@ namespace Threads
         }
         const int N = 500;
         static int iCommun = 0;
-        static object verrou = new object();
+        static ReaderWriterLock rwLock = new ReaderWriterLock();
 
         static void A()
         {
             for (int i = 0; i < N; i++)
             {
-                lock (verrou)
+                rwLock.AcquireWriterLock(Timeout.Infinite);
+                try
                 {
                     Console.Write($"A{iCommun}");
                     iCommun++;
+                }
+                finally
+                {
+                    rwLock.ReleaseWriterLock();
                 }
             }
         }
@@ -40,10 +45,15 @@ namespace Threads
         {
             for (int i = 0; i < N; i++)
             {
-                lock (verrou)
+                rwLock.AcquireWriterLock(Timeout.Infinite);
+                try
                 {
                     Console.Write($"B{iCommun}");
                     iCommun++;
+                }
+                finally
+                {
+                    rwLock.ReleaseWriterLock();
                 }
             }
         }
