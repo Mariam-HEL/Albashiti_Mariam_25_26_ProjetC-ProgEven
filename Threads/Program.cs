@@ -22,13 +22,13 @@ namespace Threads
         }
         const int N = 500;
         static int iCommun = 0;
-        static ReaderWriterLock rwLock = new ReaderWriterLock();
+        static Mutex mutex = new Mutex();
 
         static void A()
         {
             for (int i = 0; i < N; i++)
             {
-                rwLock.AcquireWriterLock(Timeout.Infinite);
+                mutex.WaitOne();
                 try
                 {
                     Console.Write($"A{iCommun}");
@@ -36,7 +36,7 @@ namespace Threads
                 }
                 finally
                 {
-                    rwLock.ReleaseWriterLock();
+                    mutex.ReleaseMutex();
                 }
             }
         }
@@ -45,7 +45,7 @@ namespace Threads
         {
             for (int i = 0; i < N; i++)
             {
-                rwLock.AcquireWriterLock(Timeout.Infinite);
+                mutex.WaitOne();
                 try
                 {
                     Console.Write($"B{iCommun}");
@@ -53,7 +53,7 @@ namespace Threads
                 }
                 finally
                 {
-                    rwLock.ReleaseWriterLock();
+                    mutex.ReleaseMutex();
                 }
             }
         }
