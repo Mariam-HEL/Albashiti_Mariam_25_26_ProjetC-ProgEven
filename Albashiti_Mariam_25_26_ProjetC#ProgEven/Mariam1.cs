@@ -132,6 +132,11 @@ namespace Albashiti_Mariam_25_26_ProjetC_ProgEven
             EcranExplorateur eW = new EcranExplorateur();
             eW.ShowDialog();
         }
-       
+
+        private void EcranIntegration_Click(object sender, EventArgs e)
+        {
+            EcranIntegration Ei = new EcranIntegration();
+            Ei.ShowDialog();
+        }
     }
 }

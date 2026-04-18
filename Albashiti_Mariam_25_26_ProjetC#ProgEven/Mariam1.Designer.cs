@@ -45,6 +45,7 @@
             button1 = new Button();
             btn7 = new Button();
             button2 = new Button();
+            EcranIntegration = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -226,12 +227,23 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // EcranIntegration
+            // 
+            EcranIntegration.Location = new Point(31, 527);
+            EcranIntegration.Name = "EcranIntegration";
+            EcranIntegration.Size = new Size(263, 29);
+            EcranIntegration.TabIndex = 16;
+            EcranIntegration.Text = "Ecran Integration (seance 14)";
+            EcranIntegration.UseVisualStyleBackColor = true;
+            EcranIntegration.Click += EcranIntegration_Click;
+            // 
             // Mariam1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1128, 568);
+            Controls.Add(EcranIntegration);
             Controls.Add(button2);
             Controls.Add(btn7);
             Controls.Add(button1);
@@ -279,5 +291,6 @@
         private Button button1;
         private Button btn7;
         private Button button2;
+        private Button EcranIntegration;
     }
 }
